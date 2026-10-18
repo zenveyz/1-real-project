@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment requests | Doctor Behruzbek stom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css?v=4">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Doctor Behruzbek stom public website">
+      <span class="brand-mark">D</span>
+      <span><strong>DOCTOR BEHRUZBEK STOM</strong><small>APPOINTMENT PORTAL</small></span>
+    </a>
+    <div class="topbar-actions">
+      <a class="public-link" href="/">View public website</a>
+      <button id="logoutButton" class="signout-button" type="button">Sign out</button>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <section class="dashboard-heading">
+      <div>
+        <p class="eyebrow">OWNER DASHBOARD</p>
+        <h1>Appointment requests</h1>
+        <p class="subtitle">Review new requests and keep your schedule up to date.</p>
+      </div>
+      <div class="sync-pill"><span></span> Synced with booking form</div>
+    </section>
+
+    <section class="stats" aria-label="Appointment totals">
+      <article class="stat-card"><span>Total requests</span><strong id="totalRequests">0</strong></article>
+      <article class="stat-card"><span>Upcoming</span><strong id="upcomingRequests">0</strong></article>
+      <article class="stat-card"><span>Past appointments</span><strong id="pastRequests">0</strong></article>
+    </section>
+
+    <section class="request-workspace">
+      <div class="request-list-pane">
+        <div class="list-toolbar">
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input id="searchRequests" type="search" placeholder="Search patient or service" autocomplete="off">
+          </label>
+          <button id="refreshRequests" class="refresh-button" type="button">Refresh</button>
+        </div>
+        <div id="requestList" class="request-list" aria-live="polite"></div>
+        <p id="listMessage" class="list-message">Loading requests…</p>
+      </div>
+
+      <aside id="requestDetails" class="request-details" aria-live="polite">
+        <div class="empty-details">Select a request to see its details.</div>
+      </aside>
+    </section>
+    <p class="local-note">Private owner portal · Appointment requests are visible to authorized staff only.</p>
+  </main>
+  <script src="admin.js?v=4"></script>
+</body>
+</html>
+

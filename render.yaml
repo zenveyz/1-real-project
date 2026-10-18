@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: dental-booking
+    runtime: node
+    plan: starter
+    region: singapore
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ACCEPT_REAL_APPOINTMENTS
+        value: false
+      - key: PRIVACY_NOTICE_VERSION
+        value: draft-1
+      - key: OWNER_PASSWORD
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: dental-bookings
+          property: connectionString
+
+databases:
+  - name: dental-bookings
+    region: singapore
+    plan: basic-256mb
+    databaseName: dental_bookings
+    user: dental_app

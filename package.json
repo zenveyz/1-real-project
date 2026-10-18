@@ -1,0 +1,15 @@
+{
+  "name": "dental-appointment-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dental appointment website and owner dashboard",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22 <25"
+  },
+  "dependencies": {
+    "pg": "8.23.1"
+  }
+}
